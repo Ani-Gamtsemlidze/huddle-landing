@@ -21,10 +21,9 @@
     font-display: swap;
 }
 .logo{
+    margin: 30px 16px;
     img{
-        width: 200px;
         height: 32px;
-        margin: 64px 80px 0;
         object-fit: contain;
     }
 }
@@ -33,14 +32,19 @@
     background-image: url(./images/bg-desktop.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    min-height: 100vh;
 
-    .container{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+}
+.image1{
+    width: 100%;
+    height: 487px;
+    object-fit: contain;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
-
 }
 .text-box{
     h2{
@@ -68,24 +72,88 @@
     justify-content: center;
     align-items: center;
     margin-top: 24px;
-    span{
+    transition: 0.5s;
+    a{
         color: #684BB1;
         font-size: 18px;
         line-height: 27px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+}
+.button:hover{
+    background-color: #E880E8;
+    cursor: pointer;
+    a{
+        color: #fff;
+        text-decoration: none;
     }
 }
 .social-networks{
-    display: flex;
-    justify-content: flex-end;
+       display: flex;
+       justify-content: flex-end;
+       margin: 30px 0;
 
     .network{
         display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1.18px solid #FFFFFF;
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        padding: 4px;
-        margin: 16px;
+        transition: 0.5s;
+
+        &:not(:last-child){
+            margin-right: 15px;
+        }
+        svg{
+            transition: 0.5s;
+        }
     }
     
 }
+.network:hover{
+    border: 1.18px solid #FF52C1;
+    cursor: pointer;
+    svg{
+        fill: #FF52C1;
+    }
+}
+@media only screen and (max-width: 992px) {
+       .container-fluid{
+        background-image: none;
+        background-image: url(./images/bg-mobile.svg);
+       }
+       .image1{
+        height: 42%;
+       }
+       .text-box{
+        text-align: center;
+        h2{
+            font-size: 24px;
+            line-height: 36px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 24px;
+        }
+       }
+       .button{
+        margin: 24px auto;
+        width: 200px;
+        height: 40px;
+        border-radius: 20px;
+
+       }
+       .social-networks{
+        justify-content: center;
+        .network{
+            width: 30px;
+            height: 30px;
+        }
+        svg{
+            width: 20px;
+           }
+       }
+  }
